@@ -18,6 +18,7 @@ public:
     menu();
     SDL_FRect Rects[3];
     void render(TTF_Font* font);
+    void destroy();
     void init(SDL_Renderer* renderer, TTF_Font* font);
     void underlineMenuItem(int index);
 };

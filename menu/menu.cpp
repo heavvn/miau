@@ -36,8 +36,14 @@ void menu::init(SDL_Renderer *renderer, TTF_Font* font) {
     }
 }
 
+void menu::destroy() {
+    for (int i = 0; i < 3; ++i) {
+        SDL_DestroyTexture(Textures[i]);        
+    }
+}
+
 void menu::underlineMenuItem(int i) {
-    underlinedIndex = i;
+    underlinedIndex = i; // 0 start, 1 settings, 2 exit !
 }
 
 void menu::render(TTF_Font* font) {

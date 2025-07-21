@@ -11,7 +11,7 @@ class engine
 		SDL_Renderer* r;
 		SDL_Event e;
 
-		enum Scene { MENU , NIL};
+		enum Scene { MENU , SETTINGS , SETTINGS_RESOLUTION, SETTINGS_KEY};
 		Scene scene = MENU;
 
 		void update(float dtAsSeconds);
