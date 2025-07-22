@@ -10,15 +10,22 @@
 class menu {
 private:
     SDL_Renderer* r;
-    SDL_Surface* Surfaces[3];
-    SDL_Texture* Textures[3];
+    TTF_Font* font;
+    SDL_Surface* MainMenuSurfaces[3];
+    SDL_Texture* MainMenuTextures[3];
+
+    SDL_Surface* SettingsSurfaces[5]; // language, resolution, keybinds, audio, back
+    SDL_Texture* SettingsTextures[5];
 
     int underlinedIndex = -1;
 public:
     menu();
-    SDL_FRect Rects[3];
-    void render(TTF_Font* font);
+    SDL_FRect MainMenuRects[3];
+    SDL_FRect SettingsRects[5];
+    void renderMenu();
     void destroy();
-    void init(SDL_Renderer* renderer, TTF_Font* font);
+    void renderSettingsBase();
+    void settingsInit();
+    void menuInit(SDL_Renderer* renderer, TTF_Font* font);
     void underlineMenuItem(int index);
 };

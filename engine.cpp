@@ -24,7 +24,8 @@ engine::engine()
         std::cerr << "failed to load font" << std::endl;
     }
 
-    this->Menu.init(r, font);
+    this->Menu.menuInit(r, font);
+    this->Menu.settingsInit();
 }
 
 int engine::s() {

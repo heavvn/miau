@@ -7,7 +7,10 @@ void engine::draw(Scene scene) {
 
     switch (scene) {
         case MENU:
-            this->Menu.render(font);
+            this->Menu.renderMenu();
+            break;
+        case SETTINGS:
+            this->Menu.renderSettingsBase();
             break;
     }
 

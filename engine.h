@@ -27,6 +27,8 @@ class engine
 		menu Menu;
 
 		TTF_Font* font;
+
+		bool checkMouseOverMenuItem(int i);
 	public:
 		engine();
 		int s();
