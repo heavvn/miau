@@ -30,7 +30,6 @@ void engine::input() {
 
                 for (int i = 0; i < 3; ++i) {
                     if (checkMouseOverMenuItem(i)) {
-                        std::cout << "hovered over menu item " << i << std::endl;
                         this->Menu.underlineMenuItem(i);
                         hoveringAny = true;
                         break; // No need to keep looping once we found one
@@ -46,7 +45,6 @@ void engine::input() {
 
                 for (int i = 0; i < 5; ++i) {
                     if (checkMouseOverMenuItem(i)) {
-                        std::cout << "hovered over settings item " << i << std::endl;
                         this->Menu.underlineMenuItem(i);
                         hoveringAny = true;
                         break; // No need to keep looping once we found one
