@@ -5,16 +5,12 @@ bool engine::checkMouseOverMenuItem(int i) {
     SDL_GetMouseState(&mouseX, &mouseY);
     SDL_FRect mouseRect = {mouseX, mouseY, 1.0f, 1.0f};
 
-
-
     switch (this->scene) {
         case MENU: {
             if (hasIntersectionFloat(&this->Menu.MainMenuRects[i], &mouseRect)) {
                 return true;
             }
         }
-        
-
         case SETTINGS: {
             if (hasIntersectionFloat(&this->Menu.SettingsRects[i], &mouseRect)) {
                 return true;
@@ -71,21 +67,20 @@ void engine::input() {
             // make it one check, that reports what was clicked on
             // rather than checking every item, every click.
             // - jas  7/21/25
+
             case SDL_EVENT_MOUSE_BUTTON_DOWN:
                 switch (this->scene) {
                     case MENU: {
-                        std::cout << " i " << std::endl;
                         if (checkMouseOverMenuItem(1)) {
-                            std::cout << "lll" << std::endl;
                             this->scene = SETTINGS;
+                            break;
                         }
-
-
                     }
 
                     case SETTINGS: {
                         if (checkMouseOverMenuItem(4)) {
                             this->scene = MENU;
+                            break;
                         }
                     }
                 }
