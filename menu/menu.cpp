@@ -32,7 +32,6 @@ void menu::menuInit(SDL_Renderer *renderer, TTF_Font* font) {
     MainMenuRects[2].w = static_cast<float>(MainMenuSurfaces[2]->w);
     MainMenuRects[2].h = static_cast<float>(MainMenuSurfaces[2]->h);
 
-    // Free MainMenuSurfaces after creating MainMenuTextures
     for (int i = 0; i < 3; ++i) {
         SDL_DestroySurface(MainMenuSurfaces[i]);
     }
@@ -50,8 +49,6 @@ void menu::underlineMenuItem(int i) {
 
 void menu::renderMenu() {
     for (int i = 0; i < 3; ++i) {
-        // Draw menu item (e.g., text)
-                // Underline if this item is active
         if (i == underlinedIndex && underlinedIndex != -1) {
             SDL_FRect underline = {
                 MainMenuRects[i].x,
